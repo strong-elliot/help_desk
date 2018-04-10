@@ -3408,3 +3408,12 @@ Processing by ArticlesController#new as HTML
 Completed 200 OK in 51ms (Views: 46.5ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-10 16:09:01 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (4.9ms)
+  Rendered articles/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 48ms (Views: 43.8ms | ActiveRecord: 0.2ms)
+
+
