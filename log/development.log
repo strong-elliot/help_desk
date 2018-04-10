@@ -163,3 +163,455 @@ Processing by ProfilesController#show as HTML
 Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/profiles/1" for 127.0.0.1 at 2018-04-10 14:15:14 -0700
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 46.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-10 14:15:16 -0700
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (2.8ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 63ms (Views: 58.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-10 14:15:20 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.4ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 54ms (Views: 34.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-10 14:15:21 -0700
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (40.4ms)
+  Rendered articles/new.html.erb within layouts/application (44.8ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 103ms (Views: 81.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2018-04-10 14:15:49 -0700
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nIMy8xuprFGuU3VhoGjOWHnlu2B7TZDSUQQ5DJKtiOHELdq5OdGA98OwhHcHPU7hrQ3BplnfNEH6d6p0/ebUqQ==", "article"=>{"title"=>"test", "user"=>"test 1", "tech"=>"test 2", "descrtion"=>"test 3", "resolution"=>"test 4", "catagory"=>"hardware", "tag_list"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe878c108c8 @tempfile=#<Tempfile:/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/RackMultipart20180410-14856-13xw4nb.png>, @original_filename="a99Ridg.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[image]\"; filename=\"a99Ridg.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Article"}
+[paperclip] Trying to link /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/RackMultipart20180410-14856-13xw4nb.png to /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1a8rwi1.png
+[paperclip] Trying to link /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1a8rwi1.png to /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-10nk6q1.png
+Command :: file -b --mime '/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-10nk6q1.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1a8rwi1.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1a8rwi1.png[0]'
+Command :: convert '/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1a8rwi1.png[0]' -auto-orient -resize "300x300>" '/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/e9fdd2ef28fefc9003fd248eb058bfcb20180410-14856-1c4gkq1'
+[paperclip] Trying to link /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/e9fdd2ef28fefc9003fd248eb058bfcb20180410-14856-1c4gkq1 to /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/c33708eeef307a8f0ba1468ef5224d3720180410-14856-121nuf0
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1a8rwi1.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1a8rwi1.png[0]'
+Command :: convert '/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1a8rwi1.png[0]' -auto-orient -resize "100x100>" '/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/e9fdd2ef28fefc9003fd248eb058bfcb20180410-14856-1ti3q45'
+[paperclip] Trying to link /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/e9fdd2ef28fefc9003fd248eb058bfcb20180410-14856-1ti3q45 to /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/9ebfa06688a29fe4c483cbdafac5adaf20180410-14856-1hqeh82
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+[paperclip] Trying to link /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1a8rwi1.png to /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-16ou3nc.png
+Command :: file -b --mime '/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-16ou3nc.png'
+[paperclip] Trying to link /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1a8rwi1.png to /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1hf71vm.png
+Command :: file -b --mime '/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1hf71vm.png'
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "descrtion", "resolution", "catagory", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "test"], ["user", "test 1"], ["tech", "test 2"], ["descrtion", "test 3"], ["resolution", "test 4"], ["catagory", "hardware"], ["created_at", "2018-04-10 21:15:51.407238"], ["updated_at", "2018-04-10 21:15:51.407238"], ["image_file_name", "a99Ridg.png"], ["image_content_type", "image/png"], ["image_file_size", 3176082], ["image_updated_at", "2018-04-10 21:15:49.267849"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/articles/1
+Completed 302 Found in 2205ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2018-04-10 14:15:51 -0700
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  Rendered collection of articles/_comment.html.erb [0 times] (0.1ms)
+  Rendered comments/_form.html.erb (12.6ms)
+  Rendered articles/show.html.erb within layouts/application (104.3ms)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 243ms (Views: 198.6ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2018-04-10 14:18:01 -0700
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (3.6ms)
+  Rendered articles/show.html.erb within layouts/application (33.8ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 189ms (Views: 142.2ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-10 14:18:05 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.4ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 59ms (Views: 53.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-10 14:18:09 -0700
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (2.4ms)
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 40ms (Views: 36.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-10 14:18:11 -0700
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (2.1ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 44ms (Views: 39.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-10 14:21:13 -0700
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (18.6ms)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 92ms (Views: 82.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-10 14:23:25 -0700
+  
+ActionController::RoutingError (uninitialized constant AuthorSessionsController):
+  
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/login" for 127.0.0.1 at 2018-04-10 14:24:02 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (405.5ms)
+Completed 500 Internal Server Error in 420ms
+
+
+  
+ActionView::Template::Error (undefined local variable or method `profile_sessions_path' for #<#<Class:0x007fe87b49d728>:0x007fe872bb1d10>
+Did you mean?  profile_path):
+    1: <h1>Login</h1>
+    2: 
+    3: <%= form_tag profile_sessions_path, method: :post do %>
+    4:   <div class="field">
+    5:     <%= label_tag :email %>
+    6:     <%= text_field_tag :email %>
+  
+app/views/profile_sessions/new.html.erb:3:in `_app_views_profile_sessions_new_html_erb__3070823366202244621_70318238789600'
+Started GET "/profiles/new" for 127.0.0.1 at 2018-04-10 14:26:03 -0700
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (8.2ms)
+  Rendered profiles/new.html.erb within layouts/application (14.8ms)
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 128ms (Views: 102.7ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/profiles" for 127.0.0.1 at 2018-04-10 14:26:07 -0700
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1YDvcfr+0HK1K4KEaBk/QnSy2dvp9pX0Jgnzui4O2ymXyxYJjpNCg1x/9Du+WnxntW5q6ZKzcz52MeXznq89MA==", "profile"=>{"username"=>"dfd", "email"=>"fdf", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Profile"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (7.5ms)
+  Rendered profiles/new.html.erb within layouts/application (12.4ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 187ms (Views: 64.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/profiles" for 127.0.0.1 at 2018-04-10 14:26:11 -0700
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lIytjePg7y4G/40IzLzNxD+UsrqFEotVIM4nfNh63EUwoxrPfqfJ58q6AXoF3vbD0x5ifUHonuwtA95OBzK3jw==", "profile"=>{"username"=>"dfd", "email"=>"fdf", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Profile"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "profiles" ("username", "email", "crypted_password", "salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "dfd"], ["email", "fdf"], ["crypted_password", "$2a$10$1lp0vrbh.H9EUXAGWD/jLOlgrCjM5D1YS/pT7M8PvGUFf1LTWPfY."], ["salt", "ryUKkyBQeQHA5MmiJP6S"], ["created_at", "2018-04-10 21:26:11.344799"], ["updated_at", "2018-04-10 21:26:11.344799"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/profiles/2
+Completed 302 Found in 134ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/profiles/2" for 127.0.0.1 at 2018-04-10 14:26:11 -0700
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.2ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 58ms (Views: 52.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles/2/edit" for 127.0.0.1 at 2018-04-10 14:26:13 -0700
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (7.9ms)
+  Rendered profiles/edit.html.erb within layouts/application (15.3ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 87ms (Views: 81.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-10 14:26:16 -0700
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (2.7ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 54ms (Views: 49.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-10 14:26:19 -0700
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (3.1ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 66ms (Views: 61.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2018-04-10 14:26:20 -0700
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 1]]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (4.5ms)
+  Rendered articles/show.html.erb within layouts/application (62.5ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 183ms (Views: 106.9ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-10 14:26:25 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (394.2ms)
+Completed 500 Internal Server Error in 410ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `profile_sessions_path' for #<#<Class:0x007fe87b49d728>:0x007fe87b0524e8>
+Did you mean?  profile_path):
+    1: <h1>Login</h1>
+    2: 
+    3: <%= form_tag profile_sessions_path, method: :post do %>
+    4:   <div class="field">
+    5:     <%= label_tag :email %>
+    6:     <%= text_field_tag :email %>
+  
+app/views/profile_sessions/new.html.erb:3:in `_app_views_profile_sessions_new_html_erb__3070823366202244621_70318236538840'
+Started GET "/login" for 127.0.0.1 at 2018-04-10 14:27:02 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (344.5ms)
+Completed 500 Internal Server Error in 360ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `profile_sessions_path' for #<#<Class:0x007fe87b49d728>:0x007fe873036cc8>
+Did you mean?  profile_path):
+    1: <h1>Login</h1>
+    2: 
+    3: <%= form_tag profile_sessions_path, method: :post do %>
+    4:   <div class="field">
+    5:     <%= label_tag :email %>
+    6:     <%= text_field_tag :email %>
+  
+app/views/profile_sessions/new.html.erb:3:in `_app_views_profile_sessions_new_html_erb__3070823366202244621_70318169373780'
+Started GET "/profiles" for 127.0.0.1 at 2018-04-10 14:27:14 -0700
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (2.5ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 55ms (Views: 50.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-10 14:28:27 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (368.1ms)
+Completed 500 Internal Server Error in 385ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `profile_sessions_path' for #<#<Class:0x007fe87b49d728>:0x007fe878d9b760>
+Did you mean?  profile_path):
+    1: <h1>Login</h1>
+    2: 
+    3: <%= form_tag profile_sessions_path, method: :post do %>
+    4:   <div class="field">
+    5:     <%= label_tag :email %>
+    6:     <%= text_field_tag :email %>
+  
+app/views/profile_sessions/new.html.erb:3:in `_app_views_profile_sessions_new_html_erb__3070823366202244621_70318236598440'
+Started GET "/login" for 127.0.0.1 at 2018-04-10 14:29:18 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (3.0ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 91ms (Views: 86.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-10 14:29:27 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MKmoYuMORCls+cc/vSUr3ROzJx5qBovhcyAjhCitbkWUhh8gfkli4KC8S010RxDa/zn32a78nlh+7dq29+UFjw==", "email"=>"admin@teespring.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'admin@teespring.com' ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 216ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-10 14:29:28 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (38.8ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 82.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-04-10 14:29:33 -0700
+Processing by ProfileSessionsController#destroy as HTML
+  [1m[36mProfile Load (3.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to 
+Completed 500 Internal Server Error in 287ms (ActiveRecord: 3.0ms)
+
+
+  
+NoMethodError (undefined method `authors_url' for #<ProfileSessionsController:0x007fe872557280>):
+  
+app/controllers/profile_sessions_controller.rb:16:in `destroy'
+Started GET "/logout" for 127.0.0.1 at 2018-04-10 14:30:12 -0700
+Processing by ProfileSessionsController#destroy as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/profiles
+Completed 302 Found in 19ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-10 14:30:12 -0700
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 46ms (Views: 42.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-10 14:30:18 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 40ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-10 14:30:22 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6Q3VD6DtOUsUVsJVeXm+H9CA7ow/OiGNi14aEH2E4Td/GOzhchzhkDz28ry0FaunTV2x0S1Uf0dMqJX9nuGx9g==", "email"=>"admin@teespring.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'admin@teespring.com' ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 194ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-10 14:30:22 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (16.1ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 59ms (Views: 47.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-10 14:31:38 -0700
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (22.4ms)
+  Rendered articles/new.html.erb within layouts/application (27.0ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 78.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-04-10 14:31:40 -0700
+Processing by ProfileSessionsController#destroy as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/profiles
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-10 14:31:40 -0700
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 49ms (Views: 43.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-10 14:31:42 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 53ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
