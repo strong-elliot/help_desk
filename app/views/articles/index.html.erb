@@ -1,4 +1,6 @@
-<h1>All Articles</h1>
+<h1>Teespring Tickets</h1>
+<% if logged_in? %>
+<%= link_to "Create a New Article", new_article_path, class: "new_article" %>
 
 <ul id="articles">
   <% @articles.each do |article| %>
@@ -7,7 +9,6 @@
           class: 'article_title', id: "article_#{article.id}" %>
     </li>
   <% end %>
+<%end%>
+
 </ul>
-
-
-<%= link_to "Create a New Article", new_article_path, class: "new_article" %>
