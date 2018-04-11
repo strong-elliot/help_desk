@@ -290,9 +290,9 @@ Completed 200 OK in 92ms (Views: 82.7ms | ActiveRecord: 2.5ms)
 
 
 Started GET "/login" for 127.0.0.1 at 2018-04-10 14:23:25 -0700
-  
+
 ActionController::RoutingError (uninitialized constant AuthorSessionsController):
-  
+
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
@@ -351,16 +351,16 @@ Processing by ProfileSessionsController#new as HTML
 Completed 500 Internal Server Error in 420ms
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `profile_sessions_path' for #<#<Class:0x007fe87b49d728>:0x007fe872bb1d10>
 Did you mean?  profile_path):
     1: <h1>Login</h1>
-    2: 
+    2:
     3: <%= form_tag profile_sessions_path, method: :post do %>
     4:   <div class="field">
     5:     <%= label_tag :email %>
     6:     <%= text_field_tag :email %>
-  
+
 app/views/profile_sessions/new.html.erb:3:in `_app_views_profile_sessions_new_html_erb__3070823366202244621_70318238789600'
 Started GET "/profiles/new" for 127.0.0.1 at 2018-04-10 14:26:03 -0700
 Processing by ProfilesController#new as HTML
@@ -453,16 +453,16 @@ Processing by ProfileSessionsController#new as HTML
 Completed 500 Internal Server Error in 410ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `profile_sessions_path' for #<#<Class:0x007fe87b49d728>:0x007fe87b0524e8>
 Did you mean?  profile_path):
     1: <h1>Login</h1>
-    2: 
+    2:
     3: <%= form_tag profile_sessions_path, method: :post do %>
     4:   <div class="field">
     5:     <%= label_tag :email %>
     6:     <%= text_field_tag :email %>
-  
+
 app/views/profile_sessions/new.html.erb:3:in `_app_views_profile_sessions_new_html_erb__3070823366202244621_70318236538840'
 Started GET "/login" for 127.0.0.1 at 2018-04-10 14:27:02 -0700
 Processing by ProfileSessionsController#new as HTML
@@ -471,16 +471,16 @@ Processing by ProfileSessionsController#new as HTML
 Completed 500 Internal Server Error in 360ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `profile_sessions_path' for #<#<Class:0x007fe87b49d728>:0x007fe873036cc8>
 Did you mean?  profile_path):
     1: <h1>Login</h1>
-    2: 
+    2:
     3: <%= form_tag profile_sessions_path, method: :post do %>
     4:   <div class="field">
     5:     <%= label_tag :email %>
     6:     <%= text_field_tag :email %>
-  
+
 app/views/profile_sessions/new.html.erb:3:in `_app_views_profile_sessions_new_html_erb__3070823366202244621_70318169373780'
 Started GET "/profiles" for 127.0.0.1 at 2018-04-10 14:27:14 -0700
 Processing by ProfilesController#index as HTML
@@ -498,16 +498,16 @@ Processing by ProfileSessionsController#new as HTML
 Completed 500 Internal Server Error in 385ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `profile_sessions_path' for #<#<Class:0x007fe87b49d728>:0x007fe878d9b760>
 Did you mean?  profile_path):
     1: <h1>Login</h1>
-    2: 
+    2:
     3: <%= form_tag profile_sessions_path, method: :post do %>
     4:   <div class="field">
     5:     <%= label_tag :email %>
     6:     <%= text_field_tag :email %>
-  
+
 app/views/profile_sessions/new.html.erb:3:in `_app_views_profile_sessions_new_html_erb__3070823366202244621_70318236598440'
 Started GET "/login" for 127.0.0.1 at 2018-04-10 14:29:18 -0700
 Processing by ProfileSessionsController#new as HTML
@@ -537,13 +537,13 @@ Completed 200 OK in 96ms (Views: 82.2ms | ActiveRecord: 1.4ms)
 Started GET "/logout" for 127.0.0.1 at 2018-04-10 14:29:33 -0700
 Processing by ProfileSessionsController#destroy as HTML
   [1m[36mProfile Load (3.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-Redirected to 
+Redirected to
 Completed 500 Internal Server Error in 287ms (ActiveRecord: 3.0ms)
 
 
-  
+
 NoMethodError (undefined method `authors_url' for #<ProfileSessionsController:0x007fe872557280>):
-  
+
 app/controllers/profile_sessions_controller.rb:16:in `destroy'
 Started GET "/logout" for 127.0.0.1 at 2018-04-10 14:30:12 -0700
 Processing by ProfileSessionsController#destroy as HTML
@@ -623,17 +623,17 @@ Completed 200 OK in 46ms (Views: 41.2ms)
 
 
 Started GET "/profiles" for 127.0.0.1 at 2018-04-10 14:48:28 -0700
-  
+
 ActionController::RoutingError (undefined method `before_filter' for ProfilesController:Class
 Did you mean?  before_action):
-  
+
 app/controllers/profiles_controller.rb:3:in `<class:ProfilesController>'
 app/controllers/profiles_controller.rb:1:in `<top (required)>'
 Started GET "/articles/new" for 127.0.0.1 at 2018-04-10 14:51:38 -0700
-  
+
 ActionController::RoutingError (undefined method `before_filter' for ArticlesController:Class
 Did you mean?  before_action):
-  
+
 app/controllers/articles_controller.rb:3:in `<class:ArticlesController>'
 app/controllers/articles_controller.rb:1:in `<top (required)>'
 Started GET "/profiles" for 127.0.0.1 at 2018-04-10 14:55:10 -0700
@@ -641,10 +641,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 133ms
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007fe878292238>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -717,10 +717,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 140ms
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007fe878aaf3f8>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -793,10 +793,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 263ms
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007fe8786ea6c8>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -869,10 +869,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 214ms
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007fe87b129d80>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -945,10 +945,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 277ms
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007fe87b1f1d08>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -1021,10 +1021,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 292ms
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007fe87078cc00>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -1141,11 +1141,11 @@ Completed 302 Found in 20ms (ActiveRecord: 1.8ms)
 
 
 Started GET "/profiles" for 127.0.0.1 at 2018-04-10 15:00:50 -0700
-  
+
 SyntaxError (/Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/controllers/profiles_controller.rb:8: syntax error, unexpected $undefined
       redirect_to \articles
                    ^):
-  
+
 app/controllers/profiles_controller.rb:8: syntax error, unexpected $undefined
 Started GET "/logout" for 127.0.0.1 at 2018-04-10 15:01:14 -0700
 Processing by ProfileSessionsController#destroy as HTML
@@ -1158,10 +1158,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 196ms
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007fe8766d6eb8>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -1237,9 +1237,9 @@ Completed 302 Found in 2ms
 
 
 Started GET "/" for 127.0.0.1 at 2018-04-10 15:02:32 -0700
-  
+
 ActionController::RoutingError (uninitialized constant HomeController):
-  
+
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
@@ -1299,9 +1299,9 @@ Completed 302 Found in 1ms
 
 
 Started GET "/" for 127.0.0.1 at 2018-04-10 15:03:11 -0700
-  
+
 ActionController::RoutingError (uninitialized constant ArticlesPathController):
-  
+
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
@@ -1354,9 +1354,9 @@ puma (3.11.3) lib/puma/server.rb:438:in `process_client'
 puma (3.11.3) lib/puma/server.rb:302:in `block in run'
 puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started GET "/" for 127.0.0.1 at 2018-04-10 15:03:14 -0700
-  
+
 ActionController::RoutingError (uninitialized constant ArticlesPathController):
-  
+
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
@@ -1409,15 +1409,15 @@ puma (3.11.3) lib/puma/server.rb:438:in `process_client'
 puma (3.11.3) lib/puma/server.rb:302:in `block in run'
 puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started GET "/" for 127.0.0.1 at 2018-04-10 15:03:21 -0700
-  
+
 ArgumentError (Missing :controller key on routes definition, please check your routes.):
-  
+
 config/routes.rb:13:in `block in <top (required)>'
 config/routes.rb:1:in `<top (required)>'
 Started GET "/profiles" for 127.0.0.1 at 2018-04-10 15:04:09 -0700
-  
+
 ArgumentError (Missing :controller key on routes definition, please check your routes.):
-  
+
 config/routes.rb:13:in `block in <top (required)>'
 config/routes.rb:1:in `<top (required)>'
 Started GET "/profiles" for 127.0.0.1 at 2018-04-10 15:04:24 -0700
@@ -1425,10 +1425,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 202ms
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007fe8748f63d0>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -1501,10 +1501,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 172ms
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007fe8782c81a8>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -1577,10 +1577,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 254ms
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007fe874894c48>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -1654,10 +1654,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 277ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007f9e98e918d8>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -1730,10 +1730,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 382ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007f9e9e08bf08>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -1806,10 +1806,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 164ms
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007f9e9e0aa020>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -1882,10 +1882,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 288ms
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007f9e9e860058>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -1958,10 +1958,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 187ms
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007f9e9e8ba170>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -2034,10 +2034,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 149ms
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007f9e9e838d50>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -2141,10 +2141,10 @@ Processing by ProfilesController#index as HTML
 Completed 500 Internal Server Error in 208ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ProfilesController:0x007f9e9a0b5050>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -2217,10 +2217,10 @@ Processing by ArticlesController#new as HTML
 Completed 500 Internal Server Error in 208ms
 
 
-  
+
 NameError (undefined local variable or method `root_path' for #<ArticlesController:0x007f9e9eba0470>
 Did you mean?  logout_path):
-  
+
 sorcery (0.11.0) lib/sorcery/controller.rb:104:in `not_authenticated'
 sorcery (0.11.0) lib/sorcery/controller.rb:25:in `require_login'
 activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
@@ -2875,9 +2875,9 @@ Completed 200 OK in 122ms (Views: 113.2ms | ActiveRecord: 0.9ms)
 
 
 Started GET "/images/medium/missing.png" for 127.0.0.1 at 2018-04-10 15:43:47 -0700
-  
+
 ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
-  
+
 actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
@@ -2920,9 +2920,9 @@ Completed 200 OK in 67ms (Views: 60.4ms | ActiveRecord: 0.6ms)
 
 
 Started GET "/images/medium/missing.png" for 127.0.0.1 at 2018-04-10 15:44:57 -0700
-  
+
 ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
-  
+
 actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
@@ -2965,9 +2965,9 @@ Completed 200 OK in 52ms (Views: 46.3ms | ActiveRecord: 0.6ms)
 
 
 Started GET "/images/medium/missing.png" for 127.0.0.1 at 2018-04-10 15:45:16 -0700
-  
+
 ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
-  
+
 actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
@@ -3008,9 +3008,9 @@ Completed 200 OK in 59ms (Views: 53.4ms | ActiveRecord: 0.4ms)
 
 
 Started GET "/images/medium/missing.png" for 127.0.0.1 at 2018-04-10 15:45:23 -0700
-  
+
 ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
-  
+
 actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
@@ -3039,9 +3039,9 @@ puma (3.11.3) lib/puma/server.rb:438:in `process_client'
 puma (3.11.3) lib/puma/server.rb:302:in `block in run'
 puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started GET "/images/medium/missing.png" for 127.0.0.1 at 2018-04-10 15:45:24 -0700
-  
+
 ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
-  
+
 actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
@@ -3170,14 +3170,14 @@ Processing by TagsController#show as HTML
 Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.2ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `tags' for nil:NilClass):
     1: <ul id="articles">
     2:   <% @articles.tags.each do |article| %>
     3:     <li>
     4:       <%= link_to article.title, article_path(article),
     5:           class: 'article_title', id: "article_#{article.id}" %>
-  
+
 app/views/tags/show.html.erb:2:in `_app_views_tags_show_html_erb__1885477329473683223_70159632074760'
 Started GET "/articles/2" for 127.0.0.1 at 2018-04-10 15:50:41 -0700
 Processing by ArticlesController#show as HTML
@@ -3270,16 +3270,16 @@ Processing by ArticlesController#new as HTML
 Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.2ms)
 
 
-  
+
 SyntaxError (/Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:35: syntax error, unexpected '<'
 ...reeze;@output_buffer.append=( <%= f.select :tag_list, ['opti...
 ...                               ^
 /Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:42: syntax error, unexpected keyword_end, expecting ')'
-'.freeze; end 
+'.freeze; end
              ^
 /Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:44: syntax error, unexpected keyword_ensure, expecting ')'
 /Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:46: syntax error, unexpected keyword_end, expecting ')'):
-  
+
 app/views/articles/_form.html.erb:35: syntax error, unexpected '<'
 app/views/articles/_form.html.erb:42: syntax error, unexpected keyword_end, expecting ')'
 app/views/articles/_form.html.erb:44: syntax error, unexpected keyword_ensure, expecting ')'
@@ -3303,7 +3303,7 @@ Processing by ArticlesController#new as HTML
 Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.1ms)
 
 
-  
+
 SyntaxError (/Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:36: syntax error, unexpected '<'
 /Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:41: unknown regexp option - p
 unmatched close parenthesis: /p>
@@ -3314,7 +3314,7 @@ unmatched close parenthesis: /p>
   </
 /Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:42: unterminated string meets end of file
 /Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:42: syntax error, unexpected end-of-input, expecting ')'):
-  
+
 app/views/articles/_form.html.erb:36: syntax error, unexpected '<'
 app/views/articles/_form.html.erb:41: unknown regexp option - p
 app/views/articles/_form.html.erb:42: unterminated string meets end of file
@@ -3329,7 +3329,7 @@ Processing by ArticlesController#new as HTML
 Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms)
 
 
-  
+
 SyntaxError (/Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:36: syntax error, unexpected '<'
 /Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:41: unknown regexp option - p
 unmatched close parenthesis: /p>
@@ -3340,7 +3340,7 @@ unmatched close parenthesis: /p>
   </
 /Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:42: unterminated string meets end of file
 /Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:42: syntax error, unexpected end-of-input, expecting ')'):
-  
+
 app/views/articles/_form.html.erb:36: syntax error, unexpected '<'
 app/views/articles/_form.html.erb:41: unknown regexp option - p
 app/views/articles/_form.html.erb:42: unterminated string meets end of file
@@ -3355,7 +3355,7 @@ Processing by ArticlesController#new as HTML
 Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.2ms)
 
 
-  
+
 SyntaxError (/Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:36: syntax error, unexpected '<'
 /Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:41: unknown regexp option - p
 unmatched close parenthesis: /p>
@@ -3366,7 +3366,7 @@ unmatched close parenthesis: /p>
   </
 /Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:42: unterminated string meets end of file
 /Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/articles/_form.html.erb:42: syntax error, unexpected end-of-input, expecting ')'):
-  
+
 app/views/articles/_form.html.erb:36: syntax error, unexpected '<'
 app/views/articles/_form.html.erb:41: unknown regexp option - p
 app/views/articles/_form.html.erb:42: unterminated string meets end of file
@@ -4086,5 +4086,500 @@ Processing by ArticlesController#new as HTML
   Rendered articles/_form.html.erb (3.3ms)
   Rendered articles/new.html.erb within layouts/application (5.1ms)
 Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.1ms)
+
+
+  [1m[35m (43.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateArticles (20180405223309)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "articles" ("id" bigserial primary key, "title" character varying, "user" character varying, "tech" character varying, "descrtion" text, "resolution" text, "catagory" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180405223309"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20180407155842)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "author_name" character varying, "body" text, "article_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_3bf61a60d3"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_article_id" ON "comments"  ("article_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180407155842"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTags (20180407192217)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180407192217"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTaggings (20180407192235)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "taggings" ("id" bigserial primary key, "tag_id" bigint, "article_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9fcd2e236b"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+, CONSTRAINT "fk_rails_50f62c287b"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_tag_id" ON "taggings"  ("tag_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_article_id" ON "taggings"  ("article_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180407192235"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPaperclipFieldsToArticle (20180409233644)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "articles" ADD "image_file_name" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "articles" ADD "image_content_type" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "articles" ADD "image_file_size" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "articles" ADD "image_updated_at" timestamp[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180409233644"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to SorceryCore (20180410210513)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "crypted_password" character varying NOT NULL, "salt" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_profiles_on_email" ON "profiles"  ("email")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180410210513"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-11 19:52:17.584627"], ["updated_at", "2018-04-11 19:52:17.584627"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 12:53:00 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 246ms (Views: 226.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 12:53:02 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.7ms)
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 12:53:07 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W8AyYDkZwLXTh+1GKd+todpMWDYGLKbBn+yKNVs1Wzzb9gZHVNod8Xj+96x5eza4aNO7OS3mDGNjVumOt6dsVw==", "email"=>"admin@teespring.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'admin@teespring.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 55ms (Views: 47.8ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 12:53:17 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OagACA6EEcbduFHL4T16DE79nTBjjT7Qvl3ojiuwpNTMWLkbJ0VuN8qJZYd3RCMrcv/O/U04tjKvCIWqUezQtg==", "email"=>"admin@teespring.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'admin@teespring.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 13:01:14 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8OPcxkUPr7NVTh7Z8TdPAjoEMd29VwXB1JTe4DRmy1UFE2XVbM7QQkJ/KpVnThYlBgZiEJPijSPFwbPETjq/Nw==", "email"=>"admin@teespring.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'admin@teespring.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 44ms (Views: 34.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/profile_sessions" for 127.0.0.1 at 2018-04-11 13:01:48 -0700
+
+ActionController::RoutingError (No route matches [GET] "/profile_sessions"):
+
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/profile" for 127.0.0.1 at 2018-04-11 13:01:52 -0700
+
+ActionController::RoutingError (No route matches [GET] "/profile"):
+
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 13:01:56 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 32ms (Views: 28.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/profiles/new" for 127.0.0.1 at 2018-04-11 13:02:03 -0700
+Processing by ProfilesController#new as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles"[0m
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (11.3ms)
+  Rendered profiles/new.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 41ms (Views: 35.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/profiles" for 127.0.0.1 at 2018-04-11 13:02:18 -0700
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7XymIhJH71PHw1zRsaq/n/+E+bHAcUgDZ8e7rxGQMQygAbJ1HWK53sqJ1wSgfvFzEGokJhrgc4YX3FQEU/izyA==", "profile"=>{"username"=>"strong.elliot91", "email"=>"elliot@teespring.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Profile"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles"[0m
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "profiles" ("username", "email", "crypted_password", "salt", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "strong.elliot91"], ["email", "elliot@teespring.com"], ["crypted_password", "$2a$10$2ZiCytRSiOs4qJs3ZPYdyu8XIE7SCaklre5qffi7m5UnCxOE9/dW6"], ["salt", "WUMsBUAd3G8e-32aGcpH"], ["created_at", "2018-04-11 20:02:18.429362"], ["updated_at", "2018-04-11 20:02:18.429362"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/profiles/2
+Completed 302 Found in 68ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/profiles/2" for 127.0.0.1 at 2018-04-11 13:02:18 -0700
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 20.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 13:57:48 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 32ms (Views: 25.1ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 13:57:51 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 13:57:53 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (37.4ms)
+  Rendered articles/new.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 82ms (Views: 64.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 13:58:55 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 13:58:58 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (3.7ms)
+  Rendered articles/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2018-04-11 14:02:03 -0700
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bv08d5fpDuo/rIdBCIbkj068yX0wOuaaSOm+f8tlJOEwrc2m7mDSsuDE7rl4X03Y+GvVXvDlYg7An9LXf9cLqA==", "article"=>{"title"=>"", "user"=>"", "tech"=>"", "descrtion"=>"", "resolution"=>"", "catagory"=>"", "tag_list"=>"Software Install"}, "commit"=>"Create Article"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1 LIMIT $2[0m  [["name", "software install"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "software install"], ["created_at", "2018-04-11 21:02:03.503828"], ["updated_at", "2018-04-11 21:02:03.503828"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "descrtion", "resolution", "catagory", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", ""], ["user", ""], ["tech", ""], ["descrtion", ""], ["resolution", ""], ["catagory", ""], ["created_at", "2018-04-11 21:02:03.526391"], ["updated_at", "2018-04-11 21:02:03.526391"]]
+  [1m[35mSQL (5.2ms)[0m  [1m[32mINSERT INTO "taggings" ("tag_id", "article_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tag_id", 1], ["article_id", 1], ["created_at", "2018-04-11 21:02:03.528428"], ["updated_at", "2018-04-11 21:02:03.528428"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/articles/1
+Completed 302 Found in 45ms (ActiveRecord: 17.7ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2018-04-11 14:02:03 -0700
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = $1[0m  [["article_id", 1]]
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 1]]
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (3.7ms)
+  Rendered articles/show.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 62ms (Views: 42.6ms | ActiveRecord: 7.6ms)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2018-04-11 14:02:13 -0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UOqYUWUfLIqYUgXj684CRCcdoOwR457PBsrjFV5e9dSlGiFCTN5Te49jMa99t1tjGx/zIT9WFi0Xn44xJAKBtg==", "comment"=>{"author_name"=>"", "body"=>""}, "commit"=>"Submit", "article_id"=>"1"}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("author_name", "body", "article_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author_name", ""], ["body", ""], ["article_id", 1], ["created_at", "2018-04-11 21:02:13.780959"], ["updated_at", "2018-04-11 21:02:13.780959"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/articles/1
+Completed 302 Found in 7ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2018-04-11 14:02:13 -0700
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = $1[0m  [["article_id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 1]]
+  Rendered collection of articles/_comment.html.erb [1 times] (0.6ms)
+  Rendered comments/_form.html.erb (1.5ms)
+  Rendered articles/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 33ms (Views: 28.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 14:03:17 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 32ms (Views: 29.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 14:03:19 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (4.0ms)
+  Rendered articles/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 35ms (Views: 31.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/button_bg.png?1301401396" for 127.0.0.1 at 2018-04-11 14:04:17 -0700
+
+ActionController::RoutingError (No route matches [GET] "/images/button_bg.png"):
+
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 14:09:01 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 35ms (Views: 31.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 14:09:04 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (5.1ms)
+  Rendered articles/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 45ms (Views: 40.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 14:09:11 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (3.2ms)
+  Rendered articles/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2018-04-11 14:09:13 -0700
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sbr5yq0H6N2YyeckMoBthmdpB4BMlw20qyGRTivz/v1ESkDZhMaXLI/402ik+TShW2tUTWIihVa6dPxqUa+Knw==", "article"=>{"title"=>"", "user"=>"", "tech"=>"", "descrtion"=>"", "resolution"=>"", "catagory"=>"", "tag_list"=>"Software Install"}, "commit"=>"Create Article"}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1 LIMIT $2[0m  [["name", "software install"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "descrtion", "resolution", "catagory", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", ""], ["user", ""], ["tech", ""], ["descrtion", ""], ["resolution", ""], ["catagory", ""], ["created_at", "2018-04-11 21:09:13.794248"], ["updated_at", "2018-04-11 21:09:13.794248"]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "taggings" ("tag_id", "article_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tag_id", 1], ["article_id", 2], ["created_at", "2018-04-11 21:09:13.805274"], ["updated_at", "2018-04-11 21:09:13.805274"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/articles/2
+Completed 302 Found in 19ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/articles/2" for 127.0.0.1 at 2018-04-11 14:09:13 -0700
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = $1[0m  [["article_id", 2]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 2]]
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.4ms)
+  Rendered articles/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 32ms (Views: 27.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 14:10:49 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (3.2ms)
+  Rendered articles/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 31ms (Views: 26.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 14:11:42 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (2.9ms)
+  Rendered articles/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 33ms (Views: 29.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 16:16:56 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 45ms (Views: 41.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-04-11 16:17:04 -0700
+Processing by ProfileSessionsController#destroy as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/profiles
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 16:17:04 -0700
+Processing by ProfilesController#index as HTML
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 16:17:04 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 16:17:05 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 16:17:06 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 16:17:12 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u6S++y5EcQV1BGZaTf+GHjER4uYV7vNaP5laia2ZOlq+CI6LF5n+1Ad5Rl3RB2/Lsn3wFYrhzabB1y0UWR9D+g==", "email"=>"elliot@teespring.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'elliot@teespring.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 160ms (Views: 27.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 16:17:17 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ase8eMlyKQBttefLUB+2+wZes2ABZdPGppZ3e+66UG903TgFkkjov3ZLl5WDplJM7bB5MsCjMol5KyUxsWKQmg==", "email"=>"elliot@teespring.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'elliot@teespring.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/profiles
+Completed 302 Found in 125ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 16:17:17 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 0.5ms)
 
 

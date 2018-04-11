@@ -9,7 +9,7 @@
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label "Employee"%><br />
+    <%= f.label "Emplotee"%><br />
     <%= f.text_field :user %>
   </p>
   <p>
@@ -31,11 +31,11 @@
 
   <p>
   <%= f.label "Type of Work" %><br />
-  <h3><%= f.select :tag_list, ['Software Install', 'others', 'more'] %></h3>
+  <h3><%= f.select :tag_list, ['stuff', 'others', 'more'] %></h3>
 </p>
 
 
   <p>
-    <%= f.submit %>
+    <%= f.submit 'Create Ticket' %>
   </p>
 <% end %>
