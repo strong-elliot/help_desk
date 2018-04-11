@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'sorcery'
-
+gem 'sqlite3'
 gem "paperclip"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
@@ -52,8 +52,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-
-gem 'pg'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
