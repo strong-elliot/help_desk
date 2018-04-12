@@ -4,7 +4,7 @@
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Migrating to CreateArticles (20180405223309)
   [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "user" varchar, "tech" varchar, "descrtion" text, "resolution" text, "catagory" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "user" varchar, "tech" varchar, "description" text, "resolution" text, "catagory" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180405223309"]]
   [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
 Migrating to CreateComments (20180407155842)
@@ -202,7 +202,7 @@ Completed 200 OK in 103ms (Views: 81.4ms | ActiveRecord: 0.5ms)
 
 Started POST "/articles" for 127.0.0.1 at 2018-04-10 14:15:49 -0700
 Processing by ArticlesController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nIMy8xuprFGuU3VhoGjOWHnlu2B7TZDSUQQ5DJKtiOHELdq5OdGA98OwhHcHPU7hrQ3BplnfNEH6d6p0/ebUqQ==", "article"=>{"title"=>"test", "user"=>"test 1", "tech"=>"test 2", "descrtion"=>"test 3", "resolution"=>"test 4", "catagory"=>"hardware", "tag_list"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe878c108c8 @tempfile=#<Tempfile:/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/RackMultipart20180410-14856-13xw4nb.png>, @original_filename="a99Ridg.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[image]\"; filename=\"a99Ridg.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Article"}
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nIMy8xuprFGuU3VhoGjOWHnlu2B7TZDSUQQ5DJKtiOHELdq5OdGA98OwhHcHPU7hrQ3BplnfNEH6d6p0/ebUqQ==", "article"=>{"title"=>"test", "user"=>"test 1", "tech"=>"test 2", "description"=>"test 3", "resolution"=>"test 4", "catagory"=>"hardware", "tag_list"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe878c108c8 @tempfile=#<Tempfile:/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/RackMultipart20180410-14856-13xw4nb.png>, @original_filename="a99Ridg.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[image]\"; filename=\"a99Ridg.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Article"}
 [paperclip] Trying to link /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/RackMultipart20180410-14856-13xw4nb.png to /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1a8rwi1.png
 [paperclip] Trying to link /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1a8rwi1.png to /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-10nk6q1.png
 Command :: file -b --mime '/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-10nk6q1.png'
@@ -219,7 +219,7 @@ Command :: convert '/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97
 Command :: file -b --mime '/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-16ou3nc.png'
 [paperclip] Trying to link /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1a8rwi1.png to /var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1hf71vm.png
 Command :: file -b --mime '/var/folders/sf/wpychm8n0bn891ym1wbp2k0c0000gn/T/4412d729a97ac43e9d2921cfbec0f27820180410-14856-1hf71vm.png'
-  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "descrtion", "resolution", "catagory", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "test"], ["user", "test 1"], ["tech", "test 2"], ["descrtion", "test 3"], ["resolution", "test 4"], ["catagory", "hardware"], ["created_at", "2018-04-10 21:15:51.407238"], ["updated_at", "2018-04-10 21:15:51.407238"], ["image_file_name", "a99Ridg.png"], ["image_content_type", "image/png"], ["image_file_size", 3176082], ["image_updated_at", "2018-04-10 21:15:49.267849"]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "description", "resolution", "catagory", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "test"], ["user", "test 1"], ["tech", "test 2"], ["description", "test 3"], ["resolution", "test 4"], ["catagory", "hardware"], ["created_at", "2018-04-10 21:15:51.407238"], ["updated_at", "2018-04-10 21:15:51.407238"], ["image_file_name", "a99Ridg.png"], ["image_content_type", "image/png"], ["image_file_size", 3176082], ["image_updated_at", "2018-04-10 21:15:49.267849"]]
   [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
 Redirected to http://localhost:3000/articles/1
 Completed 302 Found in 2205ms (ActiveRecord: 3.4ms)
@@ -2846,14 +2846,14 @@ Completed 200 OK in 57ms (Views: 53.0ms | ActiveRecord: 0.1ms)
 
 Started POST "/articles" for 127.0.0.1 at 2018-04-10 15:43:47 -0700
 Processing by ArticlesController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1SWzOBTE6wrW1ou4bubtZ00VMCQMCD3NBOPlwnnpXuDSt5fqF05vob69n2RDwCDQjL+9llAgXimAbRhuGH18+Q==", "article"=>{"title"=>"Test", "user"=>"Test", "tech"=>"Test", "descrtion"=>"Test", "resolution"=>"dr", "catagory"=>"tsr", "tag_list"=>"tst"}, "commit"=>"Create Article"}
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1SWzOBTE6wrW1ou4bubtZ00VMCQMCD3NBOPlwnnpXuDSt5fqF05vob69n2RDwCDQjL+9llAgXimAbRhuGH18+Q==", "article"=>{"title"=>"Test", "user"=>"Test", "tech"=>"Test", "description"=>"Test", "resolution"=>"dr", "catagory"=>"tsr", "tag_list"=>"tst"}, "commit"=>"Create Article"}
   [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "tst"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tst"], ["created_at", "2018-04-10 22:43:47.245329"], ["updated_at", "2018-04-10 22:43:47.245329"]]
   [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "descrtion", "resolution", "catagory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Test"], ["user", "Test"], ["tech", "Test"], ["descrtion", "Test"], ["resolution", "dr"], ["catagory", "tsr"], ["created_at", "2018-04-10 22:43:47.274185"], ["updated_at", "2018-04-10 22:43:47.274185"]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "description", "resolution", "catagory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Test"], ["user", "Test"], ["tech", "Test"], ["description", "Test"], ["resolution", "dr"], ["catagory", "tsr"], ["created_at", "2018-04-10 22:43:47.274185"], ["updated_at", "2018-04-10 22:43:47.274185"]]
   [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "taggings" ("tag_id", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 1], ["article_id", 2], ["created_at", "2018-04-10 22:43:47.276743"], ["updated_at", "2018-04-10 22:43:47.276743"]]
   [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
 Redirected to http://localhost:3000/articles/2
@@ -3213,10 +3213,10 @@ Completed 200 OK in 49ms (Views: 44.8ms | ActiveRecord: 0.2ms)
 
 Started POST "/articles" for 127.0.0.1 at 2018-04-10 15:53:11 -0700
 Processing by ArticlesController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UloLgxH0Dx6VQRDOac3o/21kAdvxs0xBqEJSp5VOIG3JPXA+9YRwDumBoK3YWsKpACq+7feO22tJoKfsxk8OFg==", "article"=>{"title"=>"", "user"=>"", "tech"=>"", "descrtion"=>"", "resolution"=>"", "catagory"=>"", "tag_list"=>""}, "commit"=>"Create Article"}
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UloLgxH0Dx6VQRDOac3o/21kAdvxs0xBqEJSp5VOIG3JPXA+9YRwDumBoK3YWsKpACq+7feO22tJoKfsxk8OFg==", "article"=>{"title"=>"", "user"=>"", "tech"=>"", "description"=>"", "resolution"=>"", "catagory"=>"", "tag_list"=>""}, "commit"=>"Create Article"}
   [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "descrtion", "resolution", "catagory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["user", ""], ["tech", ""], ["descrtion", ""], ["resolution", ""], ["catagory", ""], ["created_at", "2018-04-10 22:53:12.087456"], ["updated_at", "2018-04-10 22:53:12.087456"]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "description", "resolution", "catagory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["user", ""], ["tech", ""], ["description", ""], ["resolution", ""], ["catagory", ""], ["created_at", "2018-04-10 22:53:12.087456"], ["updated_at", "2018-04-10 22:53:12.087456"]]
   [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
 Redirected to http://localhost:3000/articles/3
 Completed 302 Found in 60ms (ActiveRecord: 3.8ms)
@@ -3238,10 +3238,10 @@ Completed 200 OK in 88ms (Views: 70.4ms | ActiveRecord: 2.6ms)
 
 Started POST "/articles" for 127.0.0.1 at 2018-04-10 15:55:07 -0700
 Processing by ArticlesController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vRy8geVbl7zhFgxkjrX5QJgy3hxBVk0zeXdOJQmXtdW6jphT5tETF4l9GLijkzT3WZhTrh1+Ltf9+bOJaAOXzA==", "article"=>{"title"=>"", "user"=>"", "tech"=>"", "descrtion"=>"", "resolution"=>"", "catagory"=>"", "tag_list"=>""}, "commit"=>"Create Article"}
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vRy8geVbl7zhFgxkjrX5QJgy3hxBVk0zeXdOJQmXtdW6jphT5tETF4l9GLijkzT3WZhTrh1+Ltf9+bOJaAOXzA==", "article"=>{"title"=>"", "user"=>"", "tech"=>"", "description"=>"", "resolution"=>"", "catagory"=>"", "tag_list"=>""}, "commit"=>"Create Article"}
   [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "descrtion", "resolution", "catagory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["user", ""], ["tech", ""], ["descrtion", ""], ["resolution", ""], ["catagory", ""], ["created_at", "2018-04-10 22:55:07.443214"], ["updated_at", "2018-04-10 22:55:07.443214"]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "description", "resolution", "catagory", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", ""], ["user", ""], ["tech", ""], ["description", ""], ["resolution", ""], ["catagory", ""], ["created_at", "2018-04-10 22:55:07.443214"], ["updated_at", "2018-04-10 22:55:07.443214"]]
   [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
 Redirected to http://localhost:3000/articles/4
 Completed 302 Found in 8ms (ActiveRecord: 3.1ms)
@@ -4094,7 +4094,7 @@ Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.1ms)
   [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Migrating to CreateArticles (20180405223309)
   [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "articles" ("id" bigserial primary key, "title" character varying, "user" character varying, "tech" character varying, "descrtion" text, "resolution" text, "catagory" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "articles" ("id" bigserial primary key, "title" character varying, "user" character varying, "tech" character varying, "description" text, "resolution" text, "catagory" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
   [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180405223309"]]
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
 Migrating to CreateComments (20180407155842)
@@ -4338,14 +4338,14 @@ Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 0.2ms)
 
 Started POST "/articles" for 127.0.0.1 at 2018-04-11 14:02:03 -0700
 Processing by ArticlesController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bv08d5fpDuo/rIdBCIbkj068yX0wOuaaSOm+f8tlJOEwrc2m7mDSsuDE7rl4X03Y+GvVXvDlYg7An9LXf9cLqA==", "article"=>{"title"=>"", "user"=>"", "tech"=>"", "descrtion"=>"", "resolution"=>"", "catagory"=>"", "tag_list"=>"Software Install"}, "commit"=>"Create Article"}
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bv08d5fpDuo/rIdBCIbkj068yX0wOuaaSOm+f8tlJOEwrc2m7mDSsuDE7rl4X03Y+GvVXvDlYg7An9LXf9cLqA==", "article"=>{"title"=>"", "user"=>"", "tech"=>"", "description"=>"", "resolution"=>"", "catagory"=>"", "tag_list"=>"Software Install"}, "commit"=>"Create Article"}
   [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1 LIMIT $2[0m  [["name", "software install"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "software install"], ["created_at", "2018-04-11 21:02:03.503828"], ["updated_at", "2018-04-11 21:02:03.503828"]]
   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "descrtion", "resolution", "catagory", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", ""], ["user", ""], ["tech", ""], ["descrtion", ""], ["resolution", ""], ["catagory", ""], ["created_at", "2018-04-11 21:02:03.526391"], ["updated_at", "2018-04-11 21:02:03.526391"]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "description", "resolution", "catagory", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", ""], ["user", ""], ["tech", ""], ["description", ""], ["resolution", ""], ["catagory", ""], ["created_at", "2018-04-11 21:02:03.526391"], ["updated_at", "2018-04-11 21:02:03.526391"]]
   [1m[35mSQL (5.2ms)[0m  [1m[32mINSERT INTO "taggings" ("tag_id", "article_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tag_id", 1], ["article_id", 1], ["created_at", "2018-04-11 21:02:03.528428"], ["updated_at", "2018-04-11 21:02:03.528428"]]
   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
 Redirected to http://127.0.0.1:3000/articles/1
@@ -4470,11 +4470,11 @@ Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 0.2ms)
 
 Started POST "/articles" for 127.0.0.1 at 2018-04-11 14:09:13 -0700
 Processing by ArticlesController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sbr5yq0H6N2YyeckMoBthmdpB4BMlw20qyGRTivz/v1ESkDZhMaXLI/402ik+TShW2tUTWIihVa6dPxqUa+Knw==", "article"=>{"title"=>"", "user"=>"", "tech"=>"", "descrtion"=>"", "resolution"=>"", "catagory"=>"", "tag_list"=>"Software Install"}, "commit"=>"Create Article"}
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sbr5yq0H6N2YyeckMoBthmdpB4BMlw20qyGRTivz/v1ESkDZhMaXLI/402ik+TShW2tUTWIihVa6dPxqUa+Knw==", "article"=>{"title"=>"", "user"=>"", "tech"=>"", "description"=>"", "resolution"=>"", "catagory"=>"", "tag_list"=>"Software Install"}, "commit"=>"Create Article"}
   [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1 LIMIT $2[0m  [["name", "software install"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "descrtion", "resolution", "catagory", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", ""], ["user", ""], ["tech", ""], ["descrtion", ""], ["resolution", ""], ["catagory", ""], ["created_at", "2018-04-11 21:09:13.794248"], ["updated_at", "2018-04-11 21:09:13.794248"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "description", "resolution", "catagory", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", ""], ["user", ""], ["tech", ""], ["description", ""], ["resolution", ""], ["catagory", ""], ["created_at", "2018-04-11 21:09:13.794248"], ["updated_at", "2018-04-11 21:09:13.794248"]]
   [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "taggings" ("tag_id", "article_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tag_id", 1], ["article_id", 2], ["created_at", "2018-04-11 21:09:13.805274"], ["updated_at", "2018-04-11 21:09:13.805274"]]
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
 Redirected to http://127.0.0.1:3000/articles/2
@@ -4581,5 +4581,1713 @@ Processing by ProfilesController#index as HTML
   [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
   Rendered profiles/index.html.erb within layouts/application (1.8ms)
 Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 16:21:20 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 16:21:37 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 16:21:52 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 16:22:10 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 28ms (Views: 24.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2018-04-11 16:22:25 -0700
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 32ms (Views: 27.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles/1/edit" for 127.0.0.1 at 2018-04-11 16:22:27 -0700
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (2.3ms)
+  Rendered profiles/edit.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 36ms (Views: 32.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2018-04-11 16:22:48 -0700
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 25.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 16:23:10 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 24ms (Views: 20.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 16:23:15 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 16:25:09 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 16:25:10 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 23ms (Views: 20.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 16:25:20 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 16:25:41 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 16:25:58 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 16:26:02 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (3.9ms)
+  Rendered articles/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 42ms (Views: 39.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 16:26:55 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (3.2ms)
+  Rendered articles/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 16:28:20 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 16:32:03 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (36.1ms)
+Completed 200 OK in 266ms (Views: 236.3ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 16:32:05 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (35.7ms)
+  Rendered articles/new.html.erb within layouts/application (38.4ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `description' for #<Article:0x007ff26ffb5400>
+Did you mean?  descrtion
+               descrtion=
+               descrtion?):
+    18:   </p>
+    19:   <p>
+    20:     <%= f.label :description %><br />
+    21:     <%= f.text_area :description %>
+    22:   </p>
+    23:   <p>
+    24:     <%= f.label :resolution %><br />
+  
+app/views/articles/_form.html.erb:21:in `block in _app_views_articles__form_html_erb___1005244089548044171_70339597118320'
+app/views/articles/_form.html.erb:1:in `_app_views_articles__form_html_erb___1005244089548044171_70339597118320'
+app/views/articles/new.html.erb:3:in `_app_views_articles_new_html_erb__1257714539448658809_70339618880240'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 16:34:18 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 60ms (Views: 42.3ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 16:34:20 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (17.9ms)
+  Rendered articles/new.html.erb within layouts/application (20.2ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `description' for #<Article:0x007ff27224bbe0>
+Did you mean?  descrtion
+               descrtion=
+               descrtion?):
+    18:   </p>
+    19:   <p>
+    20:     <%= f.label :description %><br />
+    21:     <%= f.text_area :description %>
+    22:   </p>
+    23:   <p>
+    24:     <%= f.label :resolution %><br />
+  
+app/views/articles/_form.html.erb:21:in `block in _app_views_articles__form_html_erb___1005244089548044171_70339576468880'
+app/views/articles/_form.html.erb:1:in `_app_views_articles__form_html_erb___1005244089548044171_70339576468880'
+app/views/articles/new.html.erb:3:in `_app_views_articles_new_html_erb__1257714539448658809_70339636908720'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 16:35:55 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (27.4ms)
+  Rendered articles/new.html.erb within layouts/application (30.9ms)
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 12.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `description' for #<Article:0x007f9b20d69d78>
+Did you mean?  descrtion
+               descrtion?
+               descrtion=):
+    18:   </p>
+    19:   <p>
+    20:     <%= f.label :description %><br />
+    21:     <%= f.text_area :description %>
+    22:   </p>
+    23:   <p>
+    24:     <%= f.label :resolution %><br />
+  
+app/views/articles/_form.html.erb:21:in `block in _app_views_articles__form_html_erb___148757486335672453_70152136702600'
+app/views/articles/_form.html.erb:1:in `_app_views_articles__form_html_erb___148757486335672453_70152136702600'
+app/views/articles/new.html.erb:3:in `_app_views_articles_new_html_erb___4058956576163125472_70152176078660'
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 16:36:01 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 208ms (Views: 205.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 16:36:04 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (15.8ms)
+  Rendered articles/new.html.erb within layouts/application (18.2ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `description' for #<Article:0x007f9b2919ef08>
+Did you mean?  descrtion
+               descrtion?
+               descrtion=):
+    18:   </p>
+    19:   <p>
+    20:     <%= f.label :description %><br />
+    21:     <%= f.text_area :description %>
+    22:   </p>
+    23:   <p>
+    24:     <%= f.label :resolution %><br />
+  
+app/views/articles/_form.html.erb:21:in `block in _app_views_articles__form_html_erb___148757486335672453_70152192495740'
+app/views/articles/_form.html.erb:1:in `_app_views_articles__form_html_erb___148757486335672453_70152192495740'
+app/views/articles/new.html.erb:3:in `_app_views_articles_new_html_erb___4058956576163125472_70152193109060'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 16:36:55 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (12.1ms)
+  Rendered articles/new.html.erb within layouts/application (14.1ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 10.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `description' for #<Article:0x007f9b2972de10>
+Did you mean?  descrtion
+               descrtion?
+               descrtion=):
+    18:   </p>
+    19:   <p>
+    20:     <%= f.label :description %><br />
+    21:     <%= f.text_area :description %>
+    22:   </p>
+    23:   <p>
+    24:     <%= f.label :resolution %><br />
+  
+app/views/articles/_form.html.erb:21:in `block in _app_views_articles__form_html_erb___148757486335672453_70152213699200'
+app/views/articles/_form.html.erb:1:in `_app_views_articles__form_html_erb___148757486335672453_70152213699200'
+app/views/articles/new.html.erb:3:in `_app_views_articles_new_html_erb___4058956576163125472_70152213664440'
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 16:38:35 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (13.3ms)
+  Rendered articles/new.html.erb within layouts/application (15.7ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 10.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `description' for #<Article:0x007f9b2c3a8a08>
+Did you mean?  descrtion
+               descrtion?
+               descrtion=):
+    18:   </p>
+    19:   <p>
+    20:     <%= f.label :description %><br />
+    21:     <%= f.text_area :description %>
+    22:   </p>
+    23:   <p>
+    24:     <%= f.label :resolution %><br />
+  
+app/views/articles/_form.html.erb:21:in `block in _app_views_articles__form_html_erb___148757486335672453_70152215736680'
+app/views/articles/_form.html.erb:1:in `_app_views_articles__form_html_erb___148757486335672453_70152215736680'
+app/views/articles/new.html.erb:3:in `_app_views_articles_new_html_erb___4058956576163125472_70152215707100'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 16:44:06 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (14.2ms)
+  Rendered articles/new.html.erb within layouts/application (16.3ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 9.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `description' for #<Article:0x007f9b2703d788>
+Did you mean?  descrtion
+               descrtion?
+               descrtion=):
+    18:   </p>
+    19:   <p>
+    20:     <%= f.label :description %><br />
+    21:     <%= f.text_area :description %>
+    22:   </p>
+    23:   <p>
+    24:     <%= f.label :resolution %><br />
+  
+app/views/articles/_form.html.erb:21:in `block in _app_views_articles__form_html_erb___148757486335672453_70152176954900'
+app/views/articles/_form.html.erb:1:in `_app_views_articles__form_html_erb___148757486335672453_70152176954900'
+app/views/articles/new.html.erb:3:in `_app_views_articles_new_html_erb___4058956576163125472_70152177363880'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5047.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "elliotstrongnewmbp"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (127.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "elliotstrongnewmbp"[0m
+  [1m[35m (351.3ms)[0m  [1m[35mCREATE DATABASE "elliotstrongnewmbp" ENCODING = 'utf8'[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "articles" CASCADE[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "articles" ("id" bigserial primary key, "title" character varying, "user" character varying, "tech" character varying, "descrtion" text, "resolution" text, "catagory" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_file_name" character varying, "image_content_type" character varying, "image_file_size" integer, "image_updated_at" timestamp)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "author_name" character varying, "body" text, "article_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_article_id" ON "comments"  ("article_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles" CASCADE[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "crypted_password" character varying NOT NULL, "salt" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_profiles_on_email" ON "profiles"  ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "taggings" CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "taggings" ("id" bigserial primary key, "tag_id" bigint, "article_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_article_id" ON "taggings"  ("article_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_tag_id" ON "taggings"  ("tag_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags" CASCADE[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_3bf61a60d3"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "taggings" ADD CONSTRAINT "fk_rails_50f62c287b"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "taggings" ADD CONSTRAINT "fk_rails_9fcd2e236b"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180410210513)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180405223309),
+(20180407155842),
+(20180407192217),
+(20180407192235),
+(20180409233644);
+
+[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-12 00:57:26.441475"], ["updated_at", "2018-04-12 00:57:26.441475"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (125.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "elliotstrongnewmbp"[0m
+  [1m[35m (346.5ms)[0m  [1m[35mCREATE DATABASE "elliotstrongnewmbp" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "articles" CASCADE[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "articles" ("id" bigserial primary key, "title" character varying, "user" character varying, "tech" character varying, "descrtion" text, "resolution" text, "catagory" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_file_name" character varying, "image_content_type" character varying, "image_file_size" integer, "image_updated_at" timestamp)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "author_name" character varying, "body" text, "article_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_article_id" ON "comments"  ("article_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles" CASCADE[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "crypted_password" character varying NOT NULL, "salt" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_profiles_on_email" ON "profiles"  ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "taggings" CASCADE[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "taggings" ("id" bigserial primary key, "tag_id" bigint, "article_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_article_id" ON "taggings"  ("article_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_tag_id" ON "taggings"  ("tag_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags" CASCADE[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_3bf61a60d3"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "taggings" ADD CONSTRAINT "fk_rails_50f62c287b"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "taggings" ADD CONSTRAINT "fk_rails_9fcd2e236b"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180410210513)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180405223309),
+(20180407155842),
+(20180407192217),
+(20180407192235),
+(20180409233644);
+
+[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-12 00:59:58.469889"], ["updated_at", "2018-04-12 00:59:58.469889"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (125.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "elliotstrongnewmbp"[0m
+  [1m[35m (331.3ms)[0m  [1m[35mCREATE DATABASE "elliotstrongnewmbp" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "articles" CASCADE[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "articles" ("id" bigserial primary key, "title" character varying, "user" character varying, "tech" character varying, "description" text, "resolution" text, "catagory" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_file_name" character varying, "image_content_type" character varying, "image_file_size" integer, "image_updated_at" timestamp)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "author_name" character varying, "body" text, "article_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_article_id" ON "comments"  ("article_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles" CASCADE[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "crypted_password" character varying NOT NULL, "salt" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_profiles_on_email" ON "profiles"  ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "taggings" CASCADE[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "taggings" ("id" bigserial primary key, "tag_id" bigint, "article_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_article_id" ON "taggings"  ("article_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_tag_id" ON "taggings"  ("tag_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags" CASCADE[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_3bf61a60d3"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "taggings" ADD CONSTRAINT "fk_rails_50f62c287b"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "taggings" ADD CONSTRAINT "fk_rails_9fcd2e236b"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180410210513)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180405223309),
+(20180407155842),
+(20180407192217),
+(20180407192235),
+(20180409233644);
+
+[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-12 01:00:39.160434"], ["updated_at", "2018-04-12 01:00:39.160434"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (123.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "elliotstrongnewmbp"[0m
+  [1m[35m (358.3ms)[0m  [1m[35mCREATE DATABASE "elliotstrongnewmbp" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "articles" CASCADE[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "articles" ("id" bigserial primary key, "title" character varying, "user" character varying, "tech" character varying, "description" text, "resolution" text, "catagory" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_file_name" character varying, "image_content_type" character varying, "image_file_size" integer, "image_updated_at" timestamp)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "author_name" character varying, "body" text, "article_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_article_id" ON "comments"  ("article_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "profiles" CASCADE[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "crypted_password" character varying NOT NULL, "salt" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_profiles_on_email" ON "profiles"  ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "taggings" CASCADE[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "taggings" ("id" bigserial primary key, "tag_id" bigint, "article_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_article_id" ON "taggings"  ("article_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_taggings_on_tag_id" ON "taggings"  ("tag_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags" CASCADE[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_3bf61a60d3"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "taggings" ADD CONSTRAINT "fk_rails_50f62c287b"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "taggings" ADD CONSTRAINT "fk_rails_9fcd2e236b"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180410210513)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180405223309),
+(20180407155842),
+(20180407192217),
+(20180407192235),
+(20180409233644);
+
+[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-12 01:01:44.500114"], ["updated_at", "2018-04-12 01:01:44.500114"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 18:02:15 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (1.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 240ms (Views: 218.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 18:02:18 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:02:18 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:02:20 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (2.3ms)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 48ms (Views: 44.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 18:02:26 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ambkTTcvk1S4ouxZ4m/azJSq5sWsbiyAXJU+z6VcfA1vytQ9DvIchcrfzF5+lzMZF8b0NjNhEnyi20lSUdoFrQ==", "email"=>"elliot@teespring.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.9ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'elliot@teespring.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 39ms (Views: 27.3ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 18:03:44 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"83kWPtENf43FZXsFpcab4eoYQA48fYvll9v8Or75RjTtY5JDije+Mt6bC1t2f39WAfaKXP27aqpIZq5w4SGGwQ==", "email"=>"temp@temp.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'temp@temp.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 53ms (Views: 43.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:03:47 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (2.2ms)
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:03:48 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 18:03:55 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WkdRpMJx0W3yYdTzMrIJEBLryQhEW7VP9X0dyuvy0npf62HU+6xevIAc9PSuSuDFkYfb+9tUi7MLM2pXH3Sr2g==", "email"=>"temp@temp.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'temp@temp.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-04-11 18:03:59 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/profile"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/profile_sessions" for 127.0.0.1 at 2018-04-11 18:04:01 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/profile_sessions"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 18:04:04 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 28.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 18:04:06 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:04:06 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 18:04:13 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:04:13 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:06:27 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:06:29 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 29.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 18:06:33 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cnr2CXKWWey28hc3kZJxsHXSDbPDhH+picVM3VI4PjQP1sZ5S0vWPcSPNzANaphl9r4fQFyLQVV3iztApr5HlA==", "email"=>"temp@temp.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'temp@temp.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:21:22 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 35.3ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537285614975707620)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537285614975707620)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/profile_sessions" for 127.0.0.1 at 2018-04-11 18:22:28 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/profile_sessions"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 18:22:33 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wZghk1fAuGciQy8FLQqa0X36UCK7LP7ff+9n2GZ+jmbfgqXuDPp52Dm9X1v+s35mlhSacHrqH5CgUjWSOaZOkw==", "email"=>"temp@temp.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'temp@temp.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 226ms (Views: 206.4ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 18:22:36 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 61ms (Views: 45.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:22:38 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 30.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 18:22:43 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cuE7VqioJxHyiGsJPLf4WJG2m4tSNI1q+6jjGDm7Xgl3TQsmkXWowID1Sw6gTxGNEtqJeM07s5YF5pSFzT0nqQ==", "email"=>"temp@temp.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'temp@temp.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 18:26:34 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.8ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 144ms (Views: 131.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 18:26:38 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:26:38 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 52ms (Views: 48.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:29:07 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 40ms (Views: 27.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:29:08 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 28.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 18:29:10 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 18:29:14 -0700
+Processing by ProfilesController#index as HTML
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (12.7ms)
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 34.5ms | ActiveRecord: 5.8ms)
+
+
+Started DELETE "/profiles/1" for 127.0.0.1 at 2018-04-11 18:29:18 -0700
+Processing by ProfilesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JyYaXkSQn5hYnJJObJvPDoQ1+JwSmcgW2eiiRUtrZzM5PJ4jH6peJ0Ni4hC/Iiu5b9syztNfKVkGVfAPFLOnxg==", "id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/profiles_controller.rb:66:in `destroy'
+Started GET "/profiles/new" for 127.0.0.1 at 2018-04-11 18:29:27 -0700
+Processing by ProfilesController#new as HTML
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (12.7ms)
+  Rendered profiles/new.html.erb within layouts/application (15.1ms)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 39.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/profiles" for 127.0.0.1 at 2018-04-11 18:29:37 -0700
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TxKSzoMYzEfv8bkOYf8TFNRaR9v8ZewW4r2JuHc1Ne2OG/R+s/TJd9vCDkudJrfTrjtBD0NNOKFvO80jUlvSnw==", "profile"=>{"username"=>"admin", "email"=>"admin", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Profile"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "profiles" ("username", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "admin"], ["email", "admin"], ["created_at", "2018-04-12 01:29:37.041404"], ["updated_at", "2018-04-12 01:29:37.041404"]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::NotNullViolation (PG::NotNullViolation: ERROR:  null value in column "crypted_password" violates not-null constraint
+DETAIL:  Failing row contains (2, admin, admin, null, null, 2018-04-12 01:29:37.041404, 2018-04-12 01:29:37.041404).
+: INSERT INTO "profiles" ("username", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"):
+  
+app/controllers/profiles_controller.rb:39:in `block in create'
+app/controllers/profiles_controller.rb:38:in `create'
+Started POST "/profiles" for 127.0.0.1 at 2018-04-11 18:29:53 -0700
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sJStV9nRSSaCHzIwe77Cc+kbvZ239shSI0YUfavWfxyujikqguuImZnhQm6oBybEAvV3z3YwKR38+0Y39A6/6Q==", "profile"=>{"username"=>"admin", "email"=>"admin@teespring.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Profile"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "profiles" ("username", "email", "crypted_password", "salt", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "admin"], ["email", "admin@teespring.com"], ["crypted_password", "$2a$10$PVvgfVGq3dyXjXpbekNhT.A056dOyr3OG6/Oo2Nzua2N5uWIEL0Ci"], ["salt", "tpchPyuydQPmyTRgqvtq"], ["created_at", "2018-04-12 01:29:53.471409"], ["updated_at", "2018-04-12 01:29:53.471409"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/profiles/3
+Completed 302 Found in 66ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/profiles/3" for 127.0.0.1 at 2018-04-11 18:29:53 -0700
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Username:</strong>
+    5:   <%= @profile.username %>
+    6: </p>
+    7: 
+    8: <p>
+  
+app/views/profiles/show.html.erb:5:in `_app_views_profiles_show_html_erb__893293458998018052_70273576918060'
+Started GET "/profiles/3" for 127.0.0.1 at 2018-04-11 18:31:21 -0700
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:31:21 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 33ms (Views: 23.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/profiles" for 127.0.0.1 at 2018-04-11 18:31:31 -0700
+Processing by ProfilesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sJStV9nRSSaCHzIwe77Cc+kbvZ239shSI0YUfavWfxyujikqguuImZnhQm6oBybEAvV3z3YwKR38+0Y39A6/6Q==", "profile"=>{"username"=>"admin", "email"=>"admin@teespring.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Profile"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "profiles"[0m
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :zero_profiles_or_authenticated rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:31:31 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered articles/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:31:32 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 39.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 18:31:36 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8dHNvnEKjrdzol2QSwBcgCWZY/KXtM7sDZvXd+eNax/0ff3OSNcBZgHffZfX+LVVpvVxAQi78BDz1aDqEwsSvw==", "email"=>"admin@teespring.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'admin@teespring.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/profiles/3
+Completed 302 Found in 134ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/profiles/3" for 127.0.0.1 at 2018-04-11 18:31:36 -0700
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Profile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles/3/edit" for 127.0.0.1 at 2018-04-11 18:31:38 -0700
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (2.9ms)
+  Rendered profiles/edit.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 38ms (Views: 33.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles/3" for 127.0.0.1 at 2018-04-11 18:32:50 -0700
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 50ms (Views: 28.7ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-04-11 18:32:52 -0700
+Processing by ProfileSessionsController#destroy as HTML
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/profiles
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 18:32:52 -0700
+Processing by ProfilesController#index as HTML
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:32:52 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 37ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:32:53 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 38ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 18:33:00 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8p/i3c5UONpfwqlPcH7jno/VjhiSuyV4xcTv9MTL2I/gXrYTCQK3qP0ue3vf3fb7MxKs+mzSXoj0kOZqOpe9BQ==", "email"=>"admin@teespring.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'admin@teespring.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/profiles
+Completed 302 Found in 132ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 18:33:00 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 30ms (Views: 24.7ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/profiles/1" for 127.0.0.1 at 2018-04-11 18:33:03 -0700
+Processing by ProfilesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"T5Nib+qokxYUdU48gF5TsTJidN5KR/RHzEXPqG0BFECMdlCYEf8ICBJAqMimp4o0HgUKMsTm9ZmAKD8zomMX2g==", "id"=>"1"}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[31mDELETE FROM "profiles" WHERE "profiles"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/profiles
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 18:33:03 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 22.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:33:07 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 53ms (Views: 44.4ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 18:33:09 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (26.9ms)
+  Rendered articles/new.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 74ms (Views: 54.2ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2018-04-11 18:33:11 -0700
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FxeUF+SDq7m+ZjXt/A7j0ViBCGN9RBUBysx5CMurFx6gUK4HYJVXJRCKgjzVqQFhU2KaPIIoPGClO+r/McQ4Jg==", "article"=>{"title"=>"", "user"=>"", "tech"=>"", "description"=>"", "resolution"=>"", "catagory"=>"", "tag_list"=>"stuff"}, "commit"=>"Create Ticket"}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1 LIMIT $2[0m  [["name", "stuff"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "stuff"], ["created_at", "2018-04-12 01:33:11.881180"], ["updated_at", "2018-04-12 01:33:11.881180"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "articles" ("title", "user", "tech", "description", "resolution", "catagory", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", ""], ["user", ""], ["tech", ""], ["description", ""], ["resolution", ""], ["catagory", ""], ["created_at", "2018-04-12 01:33:11.902397"], ["updated_at", "2018-04-12 01:33:11.902397"]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "taggings" ("tag_id", "article_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tag_id", 1], ["article_id", 1], ["created_at", "2018-04-12 01:33:11.904301"], ["updated_at", "2018-04-12 01:33:11.904301"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/articles/1
+Completed 302 Found in 37ms (ActiveRecord: 14.1ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2018-04-11 18:33:11 -0700
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = $1[0m  [["article_id", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 1]]
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (3.1ms)
+  Rendered articles/show.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 54ms (Views: 38.8ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-04-11 18:33:14 -0700
+Processing by ProfileSessionsController#destroy as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/profiles
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 18:33:14 -0700
+Processing by ProfilesController#index as HTML
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:33:14 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 18:33:15 -0700
+Processing by ArticlesController#new as HTML
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:33:15 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 18:33:16 -0700
+Processing by ArticlesController#new as HTML
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:33:16 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 18:33:16 -0700
+Processing by ArticlesController#new as HTML
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:33:16 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 18:33:16 -0700
+Processing by ArticlesController#new as HTML
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:33:16 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 18:33:16 -0700
+Processing by ArticlesController#new as HTML
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:33:16 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:35:05 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:35:07 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 32ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 18:35:12 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BkbJn79aheNKWDGx+5ydAYqqjWKNYygiWxnWD0/f9uQ7XSEb3HeD11JbCWj5zHInhJl2Qg/07p6YnJsaXkP+eA==", "email"=>"admin@teespring.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'admin@teespring.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/articles/new
+Completed 302 Found in 134ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-11 18:35:12 -0700
+Processing by ArticlesController#new as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (3.3ms)
+  Rendered articles/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 37ms (Views: 32.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 18:35:22 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 29ms (Views: 25.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 18:35:41 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-04-11 18:35:43 -0700
+Processing by ProfileSessionsController#destroy as HTML
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/profiles
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 18:35:43 -0700
+Processing by ProfilesController#index as HTML
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:35:43 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:35:46 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 18:35:51 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dj7rXNWICjYlZqubbfQi+uvgFXicfSqFRypdXXaiNAK7WhdVJXrQhbzTUsX0XpUZfKixqehb7v+Ag/lDALLcyg==", "email"=>"admin@teespring.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'admin@teespring.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/profiles
+Completed 302 Found in 132ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 18:35:51 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 28ms (Views: 23.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:35:56 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:36:10 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-04-11 18:36:45 -0700
+Processing by ProfileSessionsController#destroy as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/profiles
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 18:36:45 -0700
+Processing by ProfilesController#index as HTML
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:36:45 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:36:46 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/profile_sessions/new.html.erb:19: syntax error, unexpected ')', expecting '='
+'.freeze;@output_buffer.append=( redirect_to , articles_path );
+                                                              ^
+/Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/profile_sessions/new.html.erb:22: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/elliotstrongnewmbp/Desktop/Ruby/rails/blogger/TS_HD/app/views/profile_sessions/new.html.erb:24: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/profile_sessions/new.html.erb:19: syntax error, unexpected ')', expecting '='
+app/views/profile_sessions/new.html.erb:22: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/profile_sessions/new.html.erb:24: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:38:02 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (82.2ms)
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `redirect_to' for #<#<Class:0x007fd3a5f319b8>:0x007fd3aa0f2938>):
+    16:   </div>
+    17: <% end %>
+    18: 
+    19: <%= redirect_to root_path %>
+  
+app/views/profile_sessions/new.html.erb:19:in `_app_views_profile_sessions_new_html_erb___593364011499235538_70273492187900'
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:38:14 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (99.8ms)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `redirect_to' for #<#<Class:0x007fd3a5f319b8>:0x007fd3afceabf0>):
+    16:   </div>
+    17: <% end %>
+    18: 
+    19: <%=redirect_to root_path%>
+  
+app/views/profile_sessions/new.html.erb:19:in `_app_views_profile_sessions_new_html_erb___593364011499235538_70273582194140'
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:38:22 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (98.3ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `redirect_to' for #<#<Class:0x007fd3a5f319b8>:0x007fd3a6ae19c0>):
+    16:   </div>
+    17: <% end %>
+    18: 
+    19: <%= redirect_to 'Back', articles_path %>
+  
+app/views/profile_sessions/new.html.erb:19:in `_app_views_profile_sessions_new_html_erb___593364011499235538_70273505631600'
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:38:29 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 18:38:40 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"09krw0n95D4akvHKOKnp2lnMTuGVZk8muUkY7DTcji2wFsWx9rM04WBltFDoWcUN2AylTBHDl7bKPVbbKg2Mkw==", "email"=>"admin@teespring.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'admin@teespring.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/profiles
+Completed 302 Found in 131ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 18:38:40 -0700
+Processing by ProfilesController#index as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  Rendered profiles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 25ms (Views: 21.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 18:41:52 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"09krw0n95D4akvHKOKnp2lnMTuGVZk8muUkY7DTcji2wFsWx9rM04WBltFDoWcUN2AylTBHDl7bKPVbbKg2Mkw==", "email"=>"admin@teespring.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'admin@teespring.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/articles
+Completed 302 Found in 147ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 18:41:52 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 45ms (Views: 33.8ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-04-11 18:41:58 -0700
+Processing by ProfileSessionsController#destroy as HTML
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/profiles
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 18:41:58 -0700
+Processing by ProfilesController#index as HTML
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:41:58 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:42:01 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-04-11 18:42:06 -0700
+Processing by ProfileSessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/profiles
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/profiles" for 127.0.0.1 at 2018-04-11 18:42:06 -0700
+Processing by ProfilesController#index as HTML
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:42:06 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:42:07 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 18:42:11 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 18:42:13 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 35ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-04-11 18:42:24 -0700
+Processing by ProfileSessionsController#new as HTML
+  Rendering profile_sessions/new.html.erb within layouts/application
+  Rendered profile_sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/profile_sessions" for 127.0.0.1 at 2018-04-11 18:42:27 -0700
+Processing by ProfileSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lG9EU9FmBohxK/L0wZAxJJ76j/qLu3qMwKyG8VAlk9TVJI29DDQ0zqFngph1GOZiwA/nRgTp2sVYk/CoM3I8gw==", "email"=>"admin@teespring.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = 'admin@teespring.com' ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/articles
+Completed 302 Found in 132ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-11 18:42:28 -0700
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.6ms)
 
 

@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration[5.1]
       t.string :title
       t.string :user
       t.string :tech
-      t.text :descrtion
+      t.text :description
       t.text :resolution
       t.string :catagory
       t.timestamps

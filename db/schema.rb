@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20180410210513) do
     t.string "title"
     t.string "user"
     t.string "tech"
-    t.text "descrtion"
+    t.text "description"
     t.text "resolution"
     t.string "catagory"
     t.datetime "created_at", null: false

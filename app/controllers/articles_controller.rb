@@ -49,7 +49,7 @@ end
       # @article.title = params[:article][:title]
       # @article.user = params[:article][:user]
       # @article.tech = params[:article][:tech]
-      # @article.descrtion = params[:article][:descrtion]
+      # @article.description = params[:article][:description]
       # @article.resolution = params[:article][:resolution]
       # @article.catagory = params[:article][:catagory]
       # @article.save
